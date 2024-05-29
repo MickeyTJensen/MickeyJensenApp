@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Mickey Jensen's App"
+        android:name=".MyApp"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApp"
+        tools:targetApi="31">
+
+        <!-- Loading Activity -->
+        <activity
+            android:name=".LoadingActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat"> <!-- Use an AppCompat theme -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat"> <!-- Use an AppCompat theme -->
+        </activity>
+
+        <!-- Grocery List Activity -->
+        <activity
+            android:name=".grocery.GroceryListActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Dark">
+        </activity>
+
+        <activity
+            android:name=".todo.ToDoListActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Dark">
+        </activity>
+
+        <activity
+            android:name=".timer.TimerStopWatchActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat">
+        </activity>
+
+        <activity
+            android:name=".reminder.ReminderActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat">
+        </activity>
+        <activity
+            android:name=".calculator.CalculatorActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat">
+        </activity>
+        <activity
+            android:name=".calender.CalendarActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat">
+        </activity>
+
+        <receiver
+            android:name=".reminder.ReminderBroadcastReceiver"/>
+
+    </application>
+
+</manifest>
